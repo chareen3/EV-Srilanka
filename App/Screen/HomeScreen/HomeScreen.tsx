@@ -1,15 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import AppMapView from './AppMapView'
-import MapView from 'react-native-maps';
-
+import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import AppMapView from '../../Screen/HomeScreen/AppMapView';
 
 export default function HomeScreen() {
   return (
-    <View>
-<AppMapView />
-
-
+    <View style={styles.container}>
+      <AppMapView />
     </View>
-  )
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
