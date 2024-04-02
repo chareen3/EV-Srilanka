@@ -4,6 +4,7 @@ import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import MapViewStyle from '../../Utils/MapViewStyle.json'
 import { UserLocationContext } from '../../Context/UserLocationContext';
 
+
 export default function App() {
   const {location,setLocation}=useContext(UserLocationContext);
     return location?.latitude && (

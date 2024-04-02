@@ -4,7 +4,7 @@ import Colors from '../../Utils/colors'
 import * as WebBrowser from "expo-web-browser";
 import { useWarmUpBrowser } from '../../../hooks/useWarmUpBrowser'
 import { useOAuth } from "@clerk/clerk-expo";
-
+import * as fonts from "expo-font"
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -48,7 +48,7 @@ export default function LoginScreen() {
       />
 
 <View style={{padding:20}}>
-<Text style={styles.heading}> Discover the Ultimate EV Charging Locator App in Lanka </Text>
+<Text style={styles.heading}> Discover the Ultimate EV Charging Locator App in Sri Lanka </Text>
 <Text style={styles.subheading}> Easily locate EV charging stations near you, plan your trips, and explore much more with just a single click. </Text>
 
 {/* Login Buttons */}
@@ -76,12 +76,12 @@ onPress={onPress}
 const styles = StyleSheet.create({
     logoImage: {
       width: 200,
-      height: 150,
+      height: 45,
     },
     bgImage: {
       width: '100%',
       height: 180,
-      marginTop: -10,
+      marginTop: 20,
     },
     heading: {
       fontSize: 22,
