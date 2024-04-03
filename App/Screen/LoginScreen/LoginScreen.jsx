@@ -4,7 +4,7 @@ import Colors from '../../Utils/colors'
 import * as WebBrowser from "expo-web-browser";
 import { useWarmUpBrowser } from '../../../hooks/useWarmUpBrowser'
 import { useOAuth } from "@clerk/clerk-expo";
-import * as fonts from "expo-font"
+
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     heading: {
       fontSize: 22,
       fontFamily: 'poppin-bold',
+      fontWeight: 'bold',
       textAlign: 'center',
       marginTop: 20,
     },
