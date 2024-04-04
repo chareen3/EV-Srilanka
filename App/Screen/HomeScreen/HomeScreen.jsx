@@ -6,11 +6,13 @@ import SearchBar from './SearchBar';
 import { UserLocationContext } from '../../Context/UserLocationContext';
 import GlobalApi from '../../Utils/GlobalApi';
 import PlaceLitView from './PlaceListView';
+import { SelectMarkerContext } from '../../Context/SelectMarkerContext';
 
 export default function HomeScreen() {
 
 const {location,setLocation}=useContext(UserLocationContext);
 const [placeList,setPlaceList]=useState([]);
+const {selectedMarker,setSelectedMarker}=useState([]);
 useEffect(()=>{
 location&&GetNearByPlace();
 },[location])
@@ -36,24 +38,24 @@ const GetNearByPlace=()=>{
 }
 
   return (
-    <View style={styles.container}>
+   
+    <SelectMarkerContext.Provider value={{selectedMarker,setSelectedMarker}}>
+    
       <View style={styles.headerContainer}>
         <Header />
         <SearchBar searchedLocation={(location)=>console.log(location)}
         />
       </View>
-      <AppMapView />
+      {placeList&&<AppMapView placeList={placeList} />}
       <View style={styles.placeListContainer}>
         {placeList&&<PlaceLitView placeList={placeList} />}
       </View>
-    </View>
+
+    </SelectMarkerContext.Provider>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   headerContainer: {
     position: 'absolute',
     zIndex: 10,
