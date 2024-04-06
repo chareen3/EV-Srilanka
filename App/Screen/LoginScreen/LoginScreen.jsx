@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     },
     heading: {
       fontSize: 22,
-      fontFamily: 'poppin-bold',
+      fontFamily: 'poppins-bold',
       fontWeight: 'bold',
       textAlign: 'center',
       marginTop: 20,

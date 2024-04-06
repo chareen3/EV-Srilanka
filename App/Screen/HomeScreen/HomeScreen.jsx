@@ -7,6 +7,7 @@ import { UserLocationContext } from '../../Context/UserLocationContext';
 import GlobalApi from '../../Utils/GlobalApi';
 import PlaceLitView from './PlaceListView';
 import { SelectMarkerContext } from '../../Context/SelectMarkerContext';
+import Markers from './Markers';
 
 export default function HomeScreen() {
 
@@ -41,14 +42,20 @@ const GetNearByPlace=()=>{
    
     <SelectMarkerContext.Provider value={{selectedMarker,setSelectedMarker}}>
     
-      <View style={styles.headerContainer}>
+    <View style={styles.headerContainer}>
         <Header />
-        <SearchBar searchedLocation={(location)=>console.log(location)}
+        <SearchBar 
+        searchedLocation={(location)=>setLocation({
+          latitude:location.lat,
+          longitude:location.lng
+        })}
+        
         />
       </View>
       {placeList&&<AppMapView placeList={placeList} />}
       <View style={styles.placeListContainer}>
         {placeList&&<PlaceLitView placeList={placeList} />}
+       
       </View>
 
     </SelectMarkerContext.Provider>

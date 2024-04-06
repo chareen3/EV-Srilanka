@@ -4,8 +4,8 @@ import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import MapViewStyle from '../../Utils/MapViewStyle.json';
 import { UserLocationContext } from '../../Context/UserLocationContext';
 import Markers from './Markers';
-
-export default function App({ placeList }) {
+ 
+export default function AppMapView({ placeList }) {
   const { location } = useContext(UserLocationContext);
 
   return (
@@ -37,6 +37,7 @@ export default function App({ placeList }) {
         {placeList && placeList.map((item, index) => (
           <Markers 
           key={index}  
+          index={index}
           place={item} />
         ))}
       </MapView>

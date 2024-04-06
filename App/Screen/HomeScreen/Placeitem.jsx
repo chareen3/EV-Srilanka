@@ -12,8 +12,9 @@ export default function Placeitem({place}) {
     <View style={{
         backgroundColor:Colors.WHITE,
         margin:5,
+        bottom:-35,
         borderRadius:10,
-        width:Dimensions.get('screen').width*0.9
+        width:Dimensions.get('screen').width*1
         
         
         }}>
@@ -24,18 +25,18 @@ export default function Placeitem({place}) {
     {uri:PLACE_PHOTO_BASE_URL+place?.photos[0]?.name+
      "/media?key="+GlobalApi?.API_KEY+"&maxHeightPx=800&maxWidthPx=1200"}
      :require('../../../assets/images/login-bg.jpg')}
-      style={{width:'100%',height:130,borderRadius:10,zIndex:-1}}
+      style={{width:'100%',height:115,borderRadius:10,zIndex:-1,}}
         />
         <View style={{padding:15}} >
          <Text style={{
           fontSize:23,
-          fontFamily:'Poppins-SemiBold',
+          fontFamily:'poppins-semibold',
          }}>{place.displayName?.text} </Text>
 
 
          <Text style={{
             fontSize:15,
-            fontFamily:'Poppins-Regular',
+            fontFamily:'poppins',
             color:Colors.GRAY,
          }}>{place?.formattedAddress} </Text>
               
@@ -50,10 +51,10 @@ export default function Placeitem({place}) {
          <Text style={{
             fontSize:17,
             color:Colors.GRAY,
-            fontFamily:'Poppins'
+            fontFamily:'poppins'
          }}>Connectors</Text>
          <Text style={{
-            fontFamily:'Poppins-SemiBold',
+            fontFamily:'poppins-semibold',
             fontSize:20,
             marginTop:2
          }}>{place?.evChargeOptions?.connectorCount || '🔌'} Points</Text>

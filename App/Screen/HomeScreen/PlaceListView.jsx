@@ -2,25 +2,25 @@ import { View, Text, FlatList, Dimensions } from 'react-native'
 import React, { useContext, useEffect, useRef } from 'react'
 import Placeitem from './Placeitem';
 import { SelectMarkerContext } from '../../Context/SelectMarkerContext';
-  
-export default function PlaceLitView({placeList}) {
+
+
+export default function PlaceListView({placeList}) {
  const FlatListRef = useRef(null);
  const {selectedMarker,setSelectedMarker}=useContext(SelectMarkerContext);
 
  useEffect(()=>{
   selectedMarker&&scrollToIndex(selectedMarker)
    
-  },[selectedMarker])
+  },[setSelectedMarker])
 
-
-  const scrollToIndex = (index)=>{
-    FlatListRef.current?.scrollToIndex({animated:true,index})
+  const scrollToIndex=()=>{
+    FlatList.current.scrollToIndex({animated:true,index})
   }
- const getItemLayout= (_,index)=>({
-  length:Dimensions.get('window').width,
-  offset:Dimensions.get('window').width*index,
-  index
- });
+  const getItemLayout= (_,index)=>({
+    length:Dimensions.get('window').width,
+    offset:Dimensions.get('window').width*index,
+    index
+   });
 
   return (
     <View>
