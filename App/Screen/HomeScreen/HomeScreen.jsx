@@ -20,7 +20,7 @@ location&&GetNearByPlace();
 
 const GetNearByPlace=()=>{
   const data={
-    "includedTypes": ["electric_vehicle_charging_station"],
+  "includedTypes": ["electric_vehicle_charging_station"],
   "maxResultCount": 10,
   "locationRestriction": {
     "circle": {
