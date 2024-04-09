@@ -13,8 +13,8 @@ export default function PlaceListView({placeList}) {
    
   },[setSelectedMarker])
 
-  const scrollToIndex=()=>{
-    FlatList.current.scrollToIndex({animated:true,index})
+  const scrollToIndex=(index)=>{
+    FlatListRef.current?.scrollToIndex({animated:true,index})
   }
   const getItemLayout= (_,index)=>({
     length:Dimensions.get('window').width,
