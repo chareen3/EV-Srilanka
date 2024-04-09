@@ -34,7 +34,7 @@ export default function AppMapView({ placeList }) {
         </Marker>
 
   
-        {placeList && placeList.map((item, index) => (
+        {placeList&&placeList.map((item,index)=>(
           <Markers 
           key={index}  
           index={index}

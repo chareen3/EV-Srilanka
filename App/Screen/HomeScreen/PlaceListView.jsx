@@ -11,7 +11,7 @@ export default function PlaceListView({placeList}) {
  useEffect(()=>{
   selectedMarker&&scrollToIndex(selectedMarker)
    
-  },[setSelectedMarker])
+  },[selectedMarker])
 
   const scrollToIndex=(index)=>{
     FlatListRef.current?.scrollToIndex({animated:true,index})

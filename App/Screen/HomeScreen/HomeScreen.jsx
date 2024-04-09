@@ -13,7 +13,7 @@ export default function HomeScreen() {
 
 const {location,setLocation}=useContext(UserLocationContext);
 const [placeList,setPlaceList]=useState([]);
-const {selectedMarker,setSelectedMarker}=useState([]);
+const [selectedMarker,setSelectedMarker]=useState(null);
 useEffect(()=>{
 location&&GetNearByPlace();
 },[location])
